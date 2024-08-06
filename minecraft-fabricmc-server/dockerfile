@@ -1,7 +1,6 @@
-# Use the OpenJDK 24-jdk-slim base image
-FROM openjdk:24-jdk-slim
+FROM eclipse-temurin:21-jre
 
-# download paperclip
+# download fabric
 ADD "https://meta.fabricmc.net/v2/versions/loader/1.21/0.16.0/1.0.1/server/jar" /opt/minecraft/fabric-server.jar
 
 # add rcon-cli
