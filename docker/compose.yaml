@@ -1,0 +1,16 @@
+services:
+  mc-server:
+    image: docker.io/stevennab/minecraft-fabricmc-server:latest
+    container_name: "mc-server"
+    restart: unless-stopped
+    environment:
+      # Set the memory size for the Minecraft server 1G = 1 Gb, 16G = 16Gb
+      MEMORYSIZE: '1G'
+      FABRIC_FLAGS: ''
+    volumes:
+      # Choose a path on your host machine to store server data
+      - "/your/chosen/path:/data:rw"
+    ports:
+      - "25565:25565"
+     stdin_open: true
+     tty: true
